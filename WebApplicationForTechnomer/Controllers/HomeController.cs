@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using WebApplicationForTechnomer.Models;
@@ -6,10 +7,12 @@ namespace WebApplicationForTechnomer.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationContext db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationContext context)
         {
+            //bd = context;
             _logger = logger;
         }
 
